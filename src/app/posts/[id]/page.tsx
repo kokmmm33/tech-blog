@@ -18,9 +18,8 @@ export default async function PostPage({
 }: {
   params: Promise<{ id: string }>
 }) {
-  // 等待 params 解析
-  const { id } = await params
-  const decodedId = decodeURIComponent(id)
+  const resolvedParams = await params
+  const decodedId = decodeURIComponent(resolvedParams.id)
   const post = await getPostById(decodedId)
 
   if (!post) {

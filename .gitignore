@@ -12,6 +12,11 @@
 /.next/
 /out
 
+# removed features
+/src/app/posts/[id]/edit
+/src/app/posts/new
+/src/app/api
+
 # production
 /build
 

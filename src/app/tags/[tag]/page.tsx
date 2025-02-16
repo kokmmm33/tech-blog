@@ -16,8 +16,8 @@ export default async function TagPage({
 }: {
   params: Promise<{ tag: string }>
 }) {
-  const { tag } = await params
-  const decodedTag = decodeURIComponent(tag)
+  const resolvedParams = await params
+  const decodedTag = decodeURIComponent(resolvedParams.tag)
   const posts = await getPostsByTag(decodedTag)
 
   return (
