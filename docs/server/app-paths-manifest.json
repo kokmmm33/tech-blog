@@ -1,6 +1,6 @@
 {
-  "/tags/page": "app/tags/page.js",
-  "/categories/page": "app/categories/page.js",
+  "/page": "app/page.js",
   "/posts/[id]/page": "app/posts/[id]/page.js",
-  "/page": "app/page.js"
+  "/categories/page": "app/categories/page.js",
+  "/tags/page": "app/tags/page.js"
 }
