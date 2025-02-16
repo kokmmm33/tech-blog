@@ -9,6 +9,8 @@ const nextConfig = {
   experimental: {
     staticPageGenerationTimeout: 300,
   },
+  // 指定输出目录
+  distDir: 'docs',
 }
 
 module.exports = nextConfig 
