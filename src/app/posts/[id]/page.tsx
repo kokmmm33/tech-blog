@@ -14,10 +14,12 @@ export async function generateStaticParams() {
 }
 
 export default async function PostPage({
-  params: { id },
+  params,
 }: {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }) {
+  // 等待 params 解析
+  const { id } = await params
   const decodedId = decodeURIComponent(id)
   const post = await getPostById(decodedId)
 

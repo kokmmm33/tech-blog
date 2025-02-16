@@ -12,10 +12,11 @@ export async function generateStaticParams() {
 }
 
 export default async function TagPage({
-  params: { tag },
+  params,
 }: {
-  params: { tag: string }
+  params: Promise<{ tag: string }>
 }) {
+  const { tag } = await params
   const decodedTag = decodeURIComponent(tag)
   const posts = await getPostsByTag(decodedTag)
 

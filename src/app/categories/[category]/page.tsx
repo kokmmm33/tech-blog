@@ -12,10 +12,11 @@ export async function generateStaticParams() {
 }
 
 export default async function CategoryPage({
-  params: { category },
+  params,
 }: {
-  params: { category: string }
+  params: Promise<{ category: string }>
 }) {
+  const { category } = await params
   const decodedCategory = decodeURIComponent(category)
   const posts = await getPostsByCategory(decodedCategory)
 
